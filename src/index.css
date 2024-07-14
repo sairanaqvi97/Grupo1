@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 a {
+	text-decoration: none;
+	color: #fff;
+}
+
+nav,
+.user {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	color: #fff;
+}
+
+
+
+header{
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	background-color: #000;
+	color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 634px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #64c283;
+    padding: 49px 61px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.login-btn,
+.register-btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #3f61ea;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    background-color: #304fad;
+}
+
+.p-password {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+
+.p-text {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.sc-gDyJDg.lcjrCd {
+    display: flex;
+    margin-top: 10px;
+}
+
+.button-apple{
+    border: none;
+    cursor: pointer;
+    padding: 13.5px 16px;
+    border-radius: 13.6px;
+    line-height: 1.25rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-family: "LaNord Medium", sans-serif;
+    outline-color: rgb(174, 179, 236);
+    color: rgb(16, 15, 10);
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+.button-playstore{
+    border: none;
+    cursor: pointer;
+    padding: 13.5px 16px;
+    border-radius: 13.6px;
+    line-height: 1.25rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-family: "LaNord Medium", sans-serif;
+    outline-color: rgb(174, 179, 236);
+    color: rgb(16, 15, 10);
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+
+.sc-gDyJDg.lcjrCd{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+@media (min-width: 900px) {
+    .sc-gDyJDg.lcjrCd {
+        margin-top: 20px;
+    }
+}
