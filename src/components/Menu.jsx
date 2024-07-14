@@ -1,22 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
-import styles from '../styles/Menu.module.css';
+import { NavLink } from 'react-router-dom';
+import "./Menu.scss";
 
 const Menu = () => {
     return (
         <nav>
-            <ul className={styles.menu}>
+            <ul className="menu">
                 <li>
-                    <Link href="/">Inicio</Link>
+                    <NavLink to="/" exact >Inicio</NavLink>
                 </li>
                 <li>
-                    <Link href="/products">Products</Link>
+                    <NavLink to="/products" >Products</NavLink>
                 </li>
                 <li>
-                    <Link href="/profile">Profile</Link>
+                    <NavLink to="/lugares" >Lugares</NavLink>
                 </li>
             </ul>
         </nav>
-    )
-}
-export default Menu
+    );
+};
+
+export default Menu;
