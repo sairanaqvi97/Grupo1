@@ -22,7 +22,7 @@ export const Navbar = () => {
 		<>
 			<header>
 				<h1>
-					<Link to='/'>Meet Now</Link>
+					<Link to='/'></Link>   {/* INGRESAR NOMBRE DEL LOGO SI ES NESCESARIO */}
 				</h1>
 
 				{state?.logged ? (
@@ -35,7 +35,7 @@ export const Navbar = () => {
 				) : (
 					<nav>
 						<Link to='/login'>Log in</Link>
-						<Link to='/register'>Create Account</Link>
+						<Link to='/register'>Sign Up</Link>
 					</nav>
 				)}
 			</header>
