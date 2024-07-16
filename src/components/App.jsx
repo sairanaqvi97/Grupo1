@@ -1,13 +1,17 @@
-import Header from "./Header/Header.jsx";
+
 import Footer from "./Footer/Footer.jsx";
+import '../scss/Footer.scss';
 
 function App() {
 
-  return (<body>
-   <Header></Header>
+  return ( <>
+
+  <body>
+
    <Footer></Footer>
    
    </body>
+   </>
   )
 }
 

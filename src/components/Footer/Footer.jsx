@@ -7,9 +7,13 @@ function Footer() {
 
   return (
     <>
-    <FooterLogo></FooterLogo>
+
+    
+    <footer className='footer'>
+    <FooterLogo ></FooterLogo>
     <FooterSectionMenu></FooterSectionMenu>
     <FooterSectionSocials></FooterSectionSocials>
+    </footer>
     </>
   )
 }

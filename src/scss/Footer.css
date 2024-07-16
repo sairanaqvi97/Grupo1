@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: end;
+  align-items: flex-start;
+}
+.footer .footer-section {
+  color: #A6A6A6;
+}
+.footer .footer-section img.footer-logo {
+  height: 200px;
+  width: 200px;
+}/*# sourceMappingURL=Footer.css.map */
