@@ -33,6 +33,7 @@ h1 a {
 nav,
 .user {
 	display: flex;
+    margin-right: 17px;
 	align-items: center;
 	gap: 20px;
 }
@@ -137,24 +138,7 @@ label {
     margin-top: 10px;
 }
 
-.button-apple{
-    border: none;
-    cursor: pointer;
-    padding: 13.5px 16px;
-    border-radius: 13.6px;
-    line-height: 1.25rem;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    font-family: "LaNord Medium", sans-serif;
-    text-decoration: none;
-    outline-color: rgb(174, 179, 236);
-    color: rgb(16, 15, 10);
-    background-color: rgb(255, 255, 255);
-    font-size: 14px;
-}
+.button-apple,
 .button-playstore{
     border: none;
     cursor: pointer;
@@ -175,6 +159,7 @@ label {
 }
 
 
+
 .sc-gDyJDg.lcjrCd{
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -185,3 +170,4 @@ label {
         margin-top: 20px;
     }
 }
+

@@ -30,6 +30,7 @@ export const Login = () => {
 		<div className='wrapper'>
 			<form onSubmit={onLogin}>
 				<h1>Log In</h1>
+				<h2></h2>
 
 				<div className='input-group'>
 					<input
