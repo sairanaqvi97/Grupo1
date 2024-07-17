@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hook/useForm';
 
-export const Login = () => {
+export const Register = () => {
 	const navigate = useNavigate();
 
 	const { name, email, password, onInputChange, onResetForm } =
@@ -12,14 +12,14 @@ export const Login = () => {
 			password: '',
 		});
 
-	const onLogin = e => {
+	const onRegister = e => {
 		e.preventDefault();
 
 		navigate('/dashboard', {
 			replace: true,
 			state: {
-			logged: true,
-			name,
+				logged: true,
+				name,
 			},
 		});
 
@@ -28,8 +28,8 @@ export const Login = () => {
 
 	return (
 		<div className='wrapper'>
-			<form onSubmit={onLogin}>
-				<h1>Log In</h1>
+			<form onSubmit={onRegister}>
+				<h1>Sign up</h1>
 
 				<div className='input-group'>
 					<input
@@ -69,32 +69,11 @@ export const Login = () => {
 					<label htmlFor='password'>Password</label>
 				</div>
 
-				<button className='login-btn'>Get In</button>
-				<p className='p-password'>Have you forgotten the password?</p>
-
-  <div className="sc-gDyJDg lcjrCd" style={{ opacity: 1 }}>
-  <a className="sc-bwcZwS button-apple" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-    <i className="bi bi-apple"></i>
-	&nbsp; {/* &nbsp ESPACIO entre icono y texto */}
-	App Store
-  </a>
-
-  
-  <a className="sc-bwcZwS button-playstore" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-  <i className="bi bi-google-play"></i>
-  &nbsp;
-  Play Store
-  </a>
-
-
-</div>
-	<p className='p-text'>Download the app.</p>
-
-
-
-      </form>
-    </div>
-  );
+				<button className='register-btn'>Log in</button>
+				
+			</form>
+		</div>
+	);
 };
 
-export default Login;
+export default Register;
