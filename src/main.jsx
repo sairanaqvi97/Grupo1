@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		</BrowserRouter>
 	</React.StrictMode>
 );
-=======
+======
 import App from './components/App';
 import {BrowserRouter } from "react-router-dom";
 import './scss/index.css'
