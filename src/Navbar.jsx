@@ -21,6 +21,7 @@ export const Navbar = () => {
 	return (
 		<>
 			<header>
+
 				<h1>
 					<Link to='/'></Link>   {/* INGRESAR NOMBRE DEL LOGO SI ES NESCESARIO */}
 				</h1>

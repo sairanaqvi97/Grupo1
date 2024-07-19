@@ -36,6 +36,7 @@ export const Login = () => {
   };
 
   return (
+    
     <div className='wrapper'>
       <form onSubmit={onLogin}>
         <h1>Log In</h1>
@@ -97,6 +98,8 @@ export const Login = () => {
         <p className='p-text'>Download the app.</p>
       </form>
     </div>
+
+    
   );
 };
 
