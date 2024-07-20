@@ -1,5 +1,5 @@
 import {AppRouter} from "./Router/AppRouter";
-import './index.css';
+import './Styles/Login.css';
 
 function App() {
 

@@ -36,6 +36,12 @@ export const Login = () => {
   };
 
   return (
+
+    <div className='container-meetnow'>
+      <div className='left-section'>
+        <p>MeetNow te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+      </div>
+    
     
     <div className='wrapper'>
       <form onSubmit={onLogin}>
@@ -97,6 +103,7 @@ export const Login = () => {
         </div>
         <p className='p-text'>Download the app.</p>
       </form>
+    </div>
     </div>
 
     
