@@ -176,3 +176,44 @@ label {
         padding: 0;
     }
 }
+
+/*HOME*/
+
+.text-h2-home{
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 31px;
+    width: 500px;
+}
+
+
+.text-home {
+    box-sizing: border-box;
+    margin-right: 0;
+    padding-right: 32px;
+    width: 580px;
+    color: #eee6e6;
+
+ }
+
+ @media only screen and (max-width: 1075px) {
+    .text-h2-home  {
+        font-size: 24px;
+        line-height: 28px;
+        width: auto;
+    }
+}
+
+.container-text-meetnow{
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+    width: 980px;
+}
+
+
+  
+  
+  
+
