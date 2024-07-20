@@ -1,14 +1,12 @@
 import React from 'react';
 import Header from '../components/Header/Header';
 
-
-
-const Index = () => {
+const Crea_tu_evento = () => {
 	return (
-        <div>
+		<div>
         <Header />
-		<div>Hello Index</div>
+		<div>Hello Crea tu evento</div>
         </div>
 	)
 }
-export default Index
+export default Crea_tu_evento;

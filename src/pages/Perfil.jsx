@@ -3,12 +3,12 @@ import Header from '../components/Header/Header';
 
 
 
-const Index = () => {
+const Perfil = () => {
 	return (
         <div>
         <Header />
-		<div>Hello Index</div>
+		<div>Hello mi perfil</div>
         </div>
 	)
 }
-export default Index
+export default Perfil
