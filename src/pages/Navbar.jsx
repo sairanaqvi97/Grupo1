@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-	Link,
-	Outlet,
-	useLocation,
-	useNavigate,
-} from 'react-router-dom';
+import {Link, Outlet, useLocation, useNavigate,} from 'react-router-dom';
 
 export const Navbar = () => {
 	const { state } = useLocation();
@@ -12,7 +7,7 @@ export const Navbar = () => {
 
 	console.log(state);
 
-	const onLogout = () => {
+	const onLogout = () => {         // al cerrar sesion, esta funcion ejecuta vover a Login
 		navigate('/login', {
 			replace: true,
 		});
@@ -21,6 +16,7 @@ export const Navbar = () => {
 	return (
 		<>
 			<header>
+
 				<h1>
 					<Link to='/'></Link>   {/* INGRESAR NOMBRE DEL LOGO SI ES NESCESARIO */}
 				</h1>

@@ -29,7 +29,7 @@ export const Register = () => {
 	return (
 		<div className='wrapper'>
 			<form onSubmit={onRegister}>
-				<h1>Sign up</h1>
+				<h1></h1>
 
 				<div className='input-group'>
 					<input
@@ -40,6 +40,9 @@ export const Register = () => {
 						onChange={onInputChange}
 						required
 						autoComplete='off'
+						className='input-transparent'
+                        placeholder='Enter your name'
+						
 					/>
 					<label htmlFor='name'>Name</label>
 				</div>
@@ -53,6 +56,8 @@ export const Register = () => {
 						onChange={onInputChange}
 						required
 						autoComplete='off'
+						className='input-transparent'
+                        placeholder='Enter your email'
 					/>
 					<label htmlFor='email'>Email</label>
 				</div>
@@ -65,6 +70,8 @@ export const Register = () => {
 						onChange={onInputChange}
 						required
 						autoComplete='off'
+						className='input-transparent'
+                        placeholder='Enter your password'
 					/>
 					<label htmlFor='password'>Password</label>
 				</div>
