@@ -143,6 +143,16 @@ input {
     box-sizing: border-box;
 }
 
+
+.input-transparent {                  /* transparencia a las casillas del formulario*/
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+
 label {
     font-size: 14px;
     color: #eee6e6;
@@ -172,14 +182,14 @@ label {
 .p-password {
     margin-top: 10px;
     cursor: pointer;
-    color: #9d9898;
+    color: #fff;
     font-size: 14px;
 }
 
 .p-text {
     font-size: 14px;
     margin-top: 10px;
-    color: #2196F3;
+    color: #fff;
 }
 
 .sc-gDyJDg.lcjrCd {
@@ -193,7 +203,7 @@ label {
     cursor: pointer;
     padding: 13.5px 16px;
     border-radius: 13.6px;
-    line-height: 1.25rem;
+    /*line-height: 1.25rem; ajustar tamaño de iconos-botones*/ 
     display: flex;
     -webkit-box-align: center;
     align-items: center;

@@ -40,7 +40,7 @@ export const Login = () => {
     <div className='container-meetnow'>
       <div className='left-section'>
         <p>
-        <span style={{ color: '#2196F3' }}>MeetNow</span> te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.
+        <span style={{ color: '#2196F3' }}>MeetNow</span> helps you communicate and share with the people in your life.
 
         </p>
       </div>
@@ -58,6 +58,9 @@ export const Login = () => {
             onChange={onInputChange}
             required
             autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your name'
+
           />
           <label htmlFor='name'>Name</label>
         </div>
@@ -71,6 +74,8 @@ export const Login = () => {
             onChange={onInputChange}
             required
             autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your email'
           />
           <label htmlFor='email'>Email</label>
         </div>
@@ -83,6 +88,8 @@ export const Login = () => {
             onChange={onInputChange}
             required
             autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your password'
           />
           <label htmlFor='password'>Password</label>
         </div>
