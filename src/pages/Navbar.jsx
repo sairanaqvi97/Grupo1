@@ -7,7 +7,7 @@ export const Navbar = () => {
 
 	console.log(state);
 
-	const onLogout = () => {         // al cerrar sesion, esta funcion ejecuta vover a Login
+	const onLogout = () => {         // al cerrar sesion, esta funcion ejecuta volver a Login
 		navigate('/login', {
 			replace: true,
 		});

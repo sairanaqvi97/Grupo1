@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../../scss/Footer.scss';
-import Logo from '../img/Footer/MeetNowLogoWhite.svg';
+import Logo from '../../assets/Footer/MeetNowLogoWhite.svg';
 
 
 
