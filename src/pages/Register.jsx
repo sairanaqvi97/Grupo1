@@ -29,7 +29,7 @@ export const Register = () => {
 	return (
 		<div className='wrapper'>
 			<form onSubmit={onRegister}>
-				<h1>Sign up</h1>
+				<h1></h1>
 
 				<div className='input-group'>
 					<input

@@ -39,14 +39,15 @@ export const Login = () => {
 
     <div className='container-meetnow'>
       <div className='left-section'>
-        <p>MeetNow te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+        <p>
+        <span style={{ color: '#2196F3' }}>MeetNow</span> te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.
+
+        </p>
       </div>
     
     
     <div className='wrapper'>
       <form onSubmit={onLogin}>
-        <h1>Log In</h1>
-        <h2></h2>
 
         <div className='input-group'>
           <input
