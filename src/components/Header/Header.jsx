@@ -1,6 +1,6 @@
 import "../../styles/Header.css";
 import Menu from "../Menu/Menu";
-import BurgerButton from "../BurgerButton/BugerButton";
+import BurgerButton from "../BurgerButton/BurgerButton";
 import logoImage from "../../assets/Footer/MeetNowLogoGrey.svg";
 
 function Header() {

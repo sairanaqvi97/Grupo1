@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar } from "../pages/Navbar";
 import {
   Crear,
-  DashboardPage,
   Eventos,
   Home,
   Login,
