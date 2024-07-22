@@ -3,98 +3,118 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hook/useForm';
 
 export const Login = () => {
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
-	const { name, email, password, onInputChange, onResetForm } =
-		useForm({
-			name: '',
-			email: '',
-			password: '',
-		});
+  const { name, email, password, onInputChange, onResetForm } = useForm({
+    name: '',
+    email: '',
+    password: '',
+  });
 
-	const onLogin = e => {
-		e.preventDefault();
+  const onLogin = e => {
+    e.preventDefault();
 
-		navigate('/dashboard', {
-			replace: true,
-			state: {
-			logged: true,
-			name,
-			},
-		});
+    
+    const isAuthenticated = true;      // Simulación de autenticación
+    const token = "fake-token";      // Simulación  token
 
-		onResetForm();
-	};
+    if (isAuthenticated) {
+      localStorage.setItem('token', token);
 
-	return (
-		<div className='wrapper'>
-			<form onSubmit={onLogin}>
-				<h1>Log In</h1>
-				<h2></h2>
+      navigate('/dashboard', {
+        replace: true,
+        state: {
+          logged: true,
+          name,
+        },
+      });
 
-				<div className='input-group'>
-					<input
-						type='text'
-						name='name'
-						id='name'
-						value={name}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='name'>Name</label>
-				</div>
+      onResetForm();
+    } else {
+      console.error('Authentication failed');
+    }
+  };
 
-				<div className='input-group'>
-					<input
-						type='email'
-						name='email'
-						id='email'
-						value={email}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='email'>Email</label>
-				</div>
-				<div className='input-group'>
-					<input
-						type='password'
-						name='password'
-						id='password'
-						value={password}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='password'>Password</label>
-				</div>
+  return (
 
-				<button className='login-btn'>Get In</button>
-				<p className='p-password'>Have you forgotten the password?</p>
+    <div className='container-meetnow'>
+      <div className='left-section'>
+        <p>
+        <span style={{ color: '#2196F3' }}>MeetNow</span> helps you communicate and share with the people in your life.
 
-  <div className="sc-gDyJDg lcjrCd" style={{ opacity: 1 }}>
-  <a className="sc-bwcZwS button-apple" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-    <i className="bi bi-apple"></i>
-	&nbsp; {/* &nbsp ESPACIO entre icono y texto */}
-	App Store
-  </a>
+        </p>
+      </div>
+    
+    
+    <div className='wrapper'>
+      <form onSubmit={onLogin}>
 
-  
-  <a className="sc-bwcZwS button-playstore" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-  <i className="bi bi-google-play"></i>
-  &nbsp;
-  Play Store
-  </a>
+        <div className='input-group'>
+          <input
+            type='text'
+            name='name'
+            id='name'
+            value={name}
+            onChange={onInputChange}
+            required
+            autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your name'
 
+          />
+          <label htmlFor='name'>Name</label>
+        </div>
 
-</div>
-	<p className='p-text'>Download the app.</p>
+        <div className='input-group'>
+          <input
+            type='email'
+            name='email'
+            id='email'
+            value={email}
+            onChange={onInputChange}
+            required
+            autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your email'
+          />
+          <label htmlFor='email'>Email</label>
+        </div>
+        <div className='input-group'>
+          <input
+            type='password'
+            name='password'
+            id='password'
+            value={password}
+            onChange={onInputChange}
+            required
+            autoComplete='off'
+            className='input-transparent'
+            placeholder='Enter your password'
+          />
+          <label htmlFor='password'>Password</label>
+        </div>
 
+        <button className='login-btn'>Get In</button>
+        <p className='p-password'>Have you forgotten the password?</p>
 
-
+        <div className="sc-gDyJDg lcjrCd" style={{ opacity: 1 }}>
+          <a className="sc-bwcZwS button-apple" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-apple"></i>
+            &nbsp; {/* &nbsp ESPACIO entre icono y texto */}
+            App Store
+          </a>
+          <a className="sc-bwcZwS button-playstore" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-google-play"></i>
+            &nbsp;
+            Play Store
+          </a>
+        </div>
+        <p className='p-text'>Download the app.</p>
       </form>
     </div>
+    </div>
+
+    
   );
 };
 
