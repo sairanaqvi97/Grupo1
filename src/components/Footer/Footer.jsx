@@ -1,6 +1,6 @@
 
 import React from 'react';
-import '../../scss/Footer.scss';
+import '../../styles/Footer.css';
 import Logo from '../../assets/Footer/MeetNowLogoWhite.svg';
 
 
