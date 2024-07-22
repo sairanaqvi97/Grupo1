@@ -1,32 +1,33 @@
-import { Route, Routes } from 'react-router-dom';
-import { Navbar } from '../Navbar';
+import { Route, Routes } from "react-router-dom";
+import { Navbar } from "../pages/Navbar";
 import {
-	HomePage,
-	DashboardPage,
-	Login,
-	Register,
-} from '../pages';
-import { PrivateRoute } from './PrivateRoute';
+  Crear,
+  DashboardPage,
+  Eventos,
+  HomePage,
+  Home,
+  Login,
+  Perfil,
+  Register,
+} from "../pages";
+import { PrivateRoute } from "./PrivateRoute";
 
 export const AppRouter = () => {
-	return (
-		<>
-			<Routes>
-				<Route path='/' element={<Navbar />}>
-					<Route index element={<HomePage />} />
-					<Route path='login' element={<Login/>} />
-					<Route path='register' element={<Register/>} />
-					<Route
-						path='dashboard'
-						element={
-							<PrivateRoute>
-								<DashboardPage />
-							</PrivateRoute>
-						}
-					/>
-				</Route>
-			</Routes>
-		</>
-	);
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<HomePage />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="dashboard" element={
+              <PrivateRoute> <DashboardPage /> </PrivateRoute>}/>
+          <Route path="/inicio" element={<Home />} />
+          <Route path="/crear" element={<Crear />} />
+          <Route path="/eventos" element={<Eventos />} />
+          <Route path="/perfil" element={<Perfil />} />
+        </Route>
+      </Routes>
+    </>
+  );
 };
-
