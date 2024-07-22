@@ -5,6 +5,7 @@ import Logo from '../img/Footer/MeetNowLogoWhite.svg';
 
 
 
+
 const Footer = () => {
     return (
         <footer>
@@ -69,6 +70,7 @@ const Footer = () => {
                         <a href="https://www.upgrade-hub.com/" className="social__icon--link">
                         <i className="bi bi-twitter-x"></i>
                         </a>
+                        
                     </div>
                 </div>
             </section>
