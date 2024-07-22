@@ -2,9 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar } from "../pages/Navbar";
 import {
   Crear,
-  DashboardPage,
   Eventos,
-  HomePage,
   Home,
   Login,
   Perfil,
@@ -17,12 +15,10 @@ export const AppRouter = () => {
     <>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route index element={<HomePage />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="dashboard" element={
-              <PrivateRoute> <DashboardPage /> </PrivateRoute>}/>
-          <Route path="/inicio" element={<Home />} />
+          <Route path="inicio" element={
+              <PrivateRoute> <Home /> </PrivateRoute>}/>
           <Route path="/crear" element={<Crear />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/perfil" element={<Perfil />} />

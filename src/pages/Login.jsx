@@ -21,7 +21,7 @@ export const Login = () => {
     if (isAuthenticated) {
       localStorage.setItem('token', token);
 
-      navigate('/dashboard', {
+      navigate('/inicio', {
         replace: true,
         state: {
           logged: true,
