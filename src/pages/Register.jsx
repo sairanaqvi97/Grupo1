@@ -15,7 +15,7 @@ export const Register = () => {
 	const onRegister = e => {
 		e.preventDefault();
 
-		navigate('/dashboard', {
+		navigate('/inicio', {
 			replace: true,
 			state: {
 				logged: true,

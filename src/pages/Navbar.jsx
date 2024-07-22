@@ -30,8 +30,8 @@ export const Navbar = () => {
 					</div>
 				) : (
 					<nav>
-						<Link to='/login'>Log in</Link>
-						<Link to='/register'>Sign Up</Link>
+						<Link to='/login'>Inicia sesión</Link>
+						<Link to='/register'>Registro</Link>
 					</nav>
 				)}
 			</header>
