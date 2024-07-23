@@ -18,7 +18,7 @@ export const Navbar = () => {
 			<header>
 
 				<h1>
-					<Link to='/'></Link>   {/* INGRESAR NOMBRE DEL LOGO SI ES NESCESARIO */}
+					<Link to='/'></Link>  ç
 				</h1>
 
 				{state?.logged ? (
