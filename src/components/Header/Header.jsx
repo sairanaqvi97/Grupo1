@@ -1,22 +1,24 @@
-import "../../styles/Header.css";
-import Menu from "../Menu/Menu";
-import BurgerButton from "../BurgerButton/BurgerButton";
-import logoImage from "../../assets/Footer/MeetNowLogoGrey.svg";
+import "../../styles/Header.css"
+import { useState } from "react"
+import Menu from "../Menu/Menu"
+import BurgerButton from "../BurgerButton/BurgerButton"
+import logoImage from '../../assets/Footer/MeetNowLogoGrey.svg';
 
 function Header() {
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(!clicked)
+    console.log(clicked)
+  }
   return (
     <header className="header">
-      <div className="logo">
-        <img src={logoImage} alt="Logo" />
+      <div className= "logo">
+      <img src={logoImage} alt="Logo" />
       </div>
-      <div className="menu-container ">
-        <Menu />
-      </div>
-      <div className="burger-button">
-        <BurgerButton />
-      </div>
+      <Menu clicked={clicked} handleClick={handleClick}/>
+      <BurgerButton clicked={clicked} handleClick={handleClick}/>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

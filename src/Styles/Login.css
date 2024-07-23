@@ -54,58 +54,23 @@ table {
     box-sizing: border-box;
 }
 
-/*body {
-    max-width: 1200px;
+body {
+    
     margin: 0 auto;
-    color: white;
-
     padding: 0;
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/Images/valiant-made-zBkVp3E2CnE-unsplash.webp'); /* Ajusta la ruta según sea necesario /
+  background-image: url('../assets/Images/valiant-made-zBkVp3E2CnE-unsplash.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   align-items: center;
   justify-content: center;
-}*/
-body{
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: white;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Agrega un pseudo-elemento para el fondo */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('./assets/Images/valiant-made-zBkVp3E2CnE-unsplash.webp'); /* Ajusta la ruta según sea necesario */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5; /* Ajusta la opacidad según necesites */
-    z-index: -1; /* Asegura que el fondo esté detrás del contenido */
-  }
-
-
+}
 
 
 nav,

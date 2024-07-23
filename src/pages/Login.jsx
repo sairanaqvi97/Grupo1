@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hook/useForm';
 
@@ -14,13 +14,6 @@ export const Login = () => {
   const onLogin = e => {
     e.preventDefault();
 
-		navigate('/inicio', {
-			replace: true,
-			state: {
-			logged: true,
-			name,
-			},
-		});
     
     const isAuthenticated = true;      // Simulación de autenticación
     const token = "fake-token";      // Simulación  token
@@ -28,7 +21,7 @@ export const Login = () => {
     if (isAuthenticated) {
       localStorage.setItem('token', token);
 
-      navigate('/dashboard', {
+      navigate('/inicio', {
         replace: true,
         state: {
           logged: true,
