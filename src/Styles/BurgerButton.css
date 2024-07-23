@@ -50,7 +50,7 @@
   }
 
 .burger{
-    @media(min-width: 1100px){
+    @media(min-width: 600px){
         display: none;
     }
 }
