@@ -1,5 +1,4 @@
 
-import React from 'react';
 import '../../styles/Footer.css';
 import Logo from '../../assets/Footer/MeetNowLogoWhite.svg';
 

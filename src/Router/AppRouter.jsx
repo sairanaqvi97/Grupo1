@@ -9,10 +9,15 @@ import {
   Register,
 } from "../pages";
 import { PrivateRoute } from "./PrivateRoute";
+import { useMeetupContext, meetupContext} from "../components/context/meetupContext";
+import { useContext } from "react";
 
 export const AppRouter = () => {
+  const meetupContextValue = useMeetupContext();
+
   return (
     <>
+	<meetupContext.Provider value={meetupContextValue}>
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route path="login" element={<Login />} />
@@ -22,8 +27,10 @@ export const AppRouter = () => {
           <Route path="/crear" element={<Crear />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/perfil" element={<Perfil />} />
+		  
         </Route>
       </Routes>
+	  </meetupContext.Provider>
     </>
   );
 };
