@@ -83,7 +83,7 @@ function Form() {
       <label htmlFor="description">Description:</label>
       <textarea id="description" name="description" value={formData.description} onChange={handleChange} required />
 
-      <label htmlFor="fullText">Escribe un texto que deje a las usuarios boquiabiertos para que nadie se pierda tu quedada:</label>
+      <label className='escribe-text' htmlFor="fullText">Escribe un texto que deje a las usuarios boquiabiertos para que nadie se pierda tu quedada:</label>
       <textarea id="fullText" name="fullText" value={formData.fullText} onChange={handleChange} required />
 
       <label htmlFor="date">Date:</label>

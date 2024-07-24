@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { meetupContext } from '../context/meetupContext';
+import  '../../styles/MeetupCard.css'
 
 
 function MeetupCard() {
@@ -20,9 +21,9 @@ function MeetupCard() {
   }
 
   return (
-    <div>
-      <h1>MeetNow</h1>
-      <h2>¡Quedadas por un tubo!</h2>
+    <div id='events' className='break-words quedadafull marginTOP'>
+      <h1 className='textXL'>MeetNow</h1>
+      <h2 className='tubo'>¡Quedadas por un tubo!</h2>
       <ul>
         {meetups.map((meetup) => (
           <li key={meetup.id}>
