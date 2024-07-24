@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createMeetup } from '../service/MeetupService';
+import '../../styles/Form.css';
 
 function Form() {
   const [formData, setFormData] = useState({

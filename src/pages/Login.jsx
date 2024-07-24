@@ -39,8 +39,9 @@ export const Login = () => {
 
     <div className='container-meetnow'>
       <div className='left-section'>
-        <p>
-        <span style={{ color: '#2196F3' }}>MeetNow</span> helps you communicate and share with the people in your life.
+        <p className='color-general'>
+        <span style={{ color: '#2196F3' }}>MeetNow</span> te ayuda a comunicarte y compartir con las personas que forman
+        <span className='color-image color-image2 color-text-span fontF color-image3 color-image4' style={{ color: '#FF5722' }}> parte de tu vida.<br></br></span>.
 
         </p>
       </div>
@@ -48,22 +49,6 @@ export const Login = () => {
     
     <div className='wrapper'>
       <form onSubmit={onLogin}>
-
-        <div className='input-group'>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            value={name}
-            onChange={onInputChange}
-            required
-            autoComplete='off'
-            className='input-transparent'
-            placeholder='Enter your name'
-
-          />
-          <label htmlFor='name'>Name</label>
-        </div>
 
         <div className='input-group'>
           <input

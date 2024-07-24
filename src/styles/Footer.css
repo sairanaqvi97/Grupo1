@@ -7,24 +7,7 @@
   align-items: center;
   width: -webkit-fill-available;
 }
-.footer__footer__logo-image {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.footer__logo-image {
-  height: 40px;
-  margin-right: auto;
-  height: 9vh;
-}
-.footer #footer__logo {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-}
+
 .footer__links {
   width: 100%;
   max-width: 1000px;
@@ -108,7 +91,12 @@
   }
 }
 
+.social__icons{
+  margin-top: 1rem;
+}
+
+
 .social__icons a {
   margin: 0 21px;
-  color: aliceblue;
-}/*# sourceMappingURL=Footer.css.map */
+  color: #a8abae;
+}

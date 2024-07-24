@@ -76,7 +76,7 @@ export const Register = () => {
 					<label htmlFor='password'>Password</label>
 				</div>
 
-				<button className='register-btn'>Log in</button>
+				<button className='register-btn'>Register</button>
 				
 			</form>
 		</div>

@@ -1,6 +1,8 @@
 
 import '../../styles/Footer.css';
-import Logo from '../../assets/Footer/MeetNowLogoWhite.svg';
+import MeetNow from '../../assets/Footer/MeetNowLogoWhite.svg';
+
+
 
 
 
@@ -8,9 +10,6 @@ const Footer = () => {
     return (
         <footer>
         <div className="footer__container">
-        <div className='logo-meetnow'>
-        <img src={Logo} alt="Logo" className="footer__logo-image" />
-        </div>
 
             <div className="footer__links">
                 <div className="footer__link--wrapper">
@@ -53,13 +52,13 @@ const Footer = () => {
                     </div>
                     
                     <div className="social__icons" >
-                        <a href="https://www.instagram.com/upgrade_hub/" className="social__icon--link" target="_blank">
-                            <i className="bi bi-instagram"></i>
+                        <a href="https://web.telegram.org/a/" className="social__icon--link" target="_blank">
+                            <i className="bi bi-telegram"></i>
                         </a>
                         
-                        <a href="https://www.youtube.com/watch?v=55_9BMdhbe0" className="social__icon--link">
-                            <i className="fa-brands fa-youtube" style={{ color: '#ff1a1a', fontSize: 'larger' }}></i>
-                        </a>
+                        <a href="https://www.google.com/?hl=es" className="social__icon--link" target="_blank" rel="noopener noreferrer">
+            <img src={MeetNow} alt="MeetNow" style={{ width: '24px', height: '24px' }} />
+          </a>
 
                         <a href="https://www.facebook.com/?locale=es_ES" className="social__icon--link">
                             <i className="bi bi-facebook" style={{ color: '#2e99ea' }}></i>
@@ -68,6 +67,7 @@ const Footer = () => {
                         <a href="https://www.upgrade-hub.com/" className="social__icon--link">
                         <i className="bi bi-twitter-x"></i>
                         </a>
+                        
                     </div>
                 </div>
             </section>
