@@ -40,9 +40,8 @@ export const Login = () => {
     <div className='container-meetnow'>
       <div className='left-section'>
         <p className='color-general'>
-        <span style={{ color: '#2196F3' }}>MeetNow</span> encuentra lo que te gusta.
-        Comparte con las personas
-        <span className='color-image color-image2 color-text-span fontF color-image3 color-image4' style={{ color: '#FF5722' }}> que te entienden.<br></br></span>.
+        <span style={{ color: '#2196F3' }}>MeetNow</span> te ayuda a comunicarte y compartir con las personas que forman
+        <span className='color-image color-image2 color-text-span fontF color-image3 color-image4' style={{ color: '#FF5722' }}> parte de tu vida.<br></br></span>.
 
         </p>
       </div>
