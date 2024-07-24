@@ -12,7 +12,7 @@ export const PrivateRoute = ({ children }) => {
   return isAuthenticated() ? (
     <>
       {children}
-      <Footer />
+     
     </>
   ) : (
     <Navigate to="/login" state={{ from: location }} />
