@@ -52,7 +52,7 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='formulario-form' onSubmit={handleSubmit}>
       <label htmlFor="title">Title:</label>
       <input id="title" name="title" value={formData.title} onChange={handleChange} required />
 
@@ -83,7 +83,7 @@ function Form() {
       <label htmlFor="description">Description:</label>
       <textarea id="description" name="description" value={formData.description} onChange={handleChange} required />
 
-      <label htmlFor="fullText">Escribe un texto que deje a las usuarios boquiabiertos para que nadie se pierda tu quedada:</label>
+      <label className='escribe-text' htmlFor="fullText">Escribe un texto que deje a las usuarios boquiabiertos para que nadie se pierda tu quedada:</label>
       <textarea id="fullText" name="fullText" value={formData.fullText} onChange={handleChange} required />
 
       <label htmlFor="date">Date:</label>
@@ -95,7 +95,8 @@ function Form() {
       <label htmlFor="city">City:</label>
       <input id="city" name="city" value={formData.city} onChange={handleChange} required />
 
-      <button type="submit">Create Meetup</button>
+      <button type="button" className="btn btn-primary btn-sm">Create Meetup</button>
+
     </form>
   );
 }

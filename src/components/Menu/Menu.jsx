@@ -9,7 +9,7 @@ const Menu = ({clicked,handleClick}) => {
         <nav>
             <ul className={`menu links ${clicked ? 'active': ''}`}>
                 <li>
-                    <NavLink to="/inicio" exact >Inicio</NavLink>
+                    <NavLink to="/inicio">Inicio</NavLink>
                 </li>
                 <li>
                     <NavLink to="/perfil" >Mi perfil</NavLink>

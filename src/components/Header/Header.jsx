@@ -18,7 +18,8 @@ function Header() {
       <Menu clicked={clicked} handleClick={handleClick}/>
       <BurgerButton clicked={clicked} handleClick={handleClick}/>
     </header>
+
   )
 }
 
-export default Header
+export default Header;
