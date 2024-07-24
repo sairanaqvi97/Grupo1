@@ -5,7 +5,7 @@ input{
 
 textarea{
     margin-bottom: 1rem;
-    background: #793be7;
+    background: #941d1d;
     color: white;
 
 }
@@ -21,17 +21,25 @@ input[type="time"] {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    background-color: #9ba223;
+    background-color: #214d61;
     color: aliceblue;
 }
 
 .escribe-text{
-    font-size: 12px;
-    line-height: 1.3333733333;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-size: 15px;
+    line-height: 1.235364;
+    margin-left: 7%;
+    font-weight: 500;
+    letter-spacing: -0.022em;
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: chartreuse;
+    color: #ffffff;
     margin-bottom: 2rem;
 }
+
+.btn{
+    margin-top: 10px;
+}
+
+
+
   

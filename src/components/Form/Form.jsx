@@ -52,7 +52,7 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='formulario-form' onSubmit={handleSubmit}>
       <label htmlFor="title">Title:</label>
       <input id="title" name="title" value={formData.title} onChange={handleChange} required />
 
@@ -95,7 +95,8 @@ function Form() {
       <label htmlFor="city">City:</label>
       <input id="city" name="city" value={formData.city} onChange={handleChange} required />
 
-      <button type="submit">Create Meetup</button>
+      <button type="button" className="btn btn-primary btn-sm">Create Meetup</button>
+
     </form>
   );
 }
