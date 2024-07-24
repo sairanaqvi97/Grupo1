@@ -30,8 +30,8 @@ function MeetupCard() {
             <p><strong>Host:</strong> {meetup.host.name}</p>
             <p><strong>Contact:</strong> {meetup.host.contact}</p>
             <img src={meetup.host.avatar} alt={`${meetup.host.name}'s avatar`} width="50" height="50" />
-            <p><strong>Location:</strong> {meetup.googleMapsLink}</p>
-            <p><a href={meetup.googleMapsLink} target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+            {/* <p><strong>Location:</strong> {meetup.googleMapsLink}</p>
+            <p><a href={meetup.googleMapsLink} target="_blank" rel="noopener noreferrer">View on Google Maps</a></p> */}
             <p><strong>Type:</strong> {meetup.type}</p>
             <p><strong>Keywords:</strong> {meetup.keywords.join(', ')}</p>
             <p><strong>Description:</strong> {meetup.description}</p>
