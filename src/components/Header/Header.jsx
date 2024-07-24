@@ -2,7 +2,7 @@ import "../../styles/Header.css"
 import { useState } from "react"
 import Menu from "../Menu/Menu"
 import BurgerButton from "../BurgerButton/BurgerButton"
-import logoImage from '../../assets/Footer/MeetNowLogoGrey.svg';
+import logoImage from '../../assets/Footer/MeetNowLogoYellow.svg';
 
 function Header() {
   const [clicked, setClicked] = useState(false);
