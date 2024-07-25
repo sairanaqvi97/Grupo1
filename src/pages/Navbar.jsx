@@ -17,7 +17,7 @@ export const Navbar = () => {
 			<header>
 
 				<h1>
-					<Link to='/'></Link>
+					<Link to='/'></Link>  
 				</h1>
 
 				{state?.logged ? (
