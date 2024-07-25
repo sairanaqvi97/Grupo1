@@ -5,3 +5,29 @@
     color: aliceblue;
     margin-left: 1rem;
 }
+.marginTOP {
+    margin-top: 1.25rem;
+}
+.quedadafull {
+    width: 100%;
+}
+.textXL {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: white;
+}
+
+.tubo {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #7C1E96;
+}
+
+@media (min-width: 577px) {
+    .break-words {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color:#FFE98F;
+    }
+}

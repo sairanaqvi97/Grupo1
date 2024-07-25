@@ -1,20 +1,15 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import MeetupCard from "../components/MeetupCard/MeetupCard";
-import '../styles/Eventos.css'
+import Card from "../components/Card/Card";
 
 export const Eventos = () => {
-
   return (
     <div>
       <Header />
-      <div>
-        <h2 className="hello">Hello Próximos eventos!</h2>
-      </div>
-      
-      <MeetupCard></MeetupCard>
-
-
+      <Card>
+        <MeetupCard />
+      </Card>
     </div>
   );
 };

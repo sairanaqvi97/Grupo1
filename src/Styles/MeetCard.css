@@ -1,0 +1,96 @@
+components/Card/Card.css
+.card-meet{
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo general del contenedor de tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: space-between;
+    margin-top: 5px;
+    max-width: 100%; 
+  
+    }
+.card {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    height: 50;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+    color:#FFE98F;
+    background-color:#7C1E96;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1.0rem; 
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card-title{
+    color: #A6A6A6;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.card-image {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+}
+.card-paragraph {
+    margin-left: 15px;
+    
+}
+
+
+.card-paragraph strong {
+    font-weight:900;
+    color: #A6A6A6;
+
+}
+
+.card-paragraph p {
+
+    margin-top: 5px;
+
+}
+
+.card-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+margin-top: 5px
+}
+
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    margin: 0 ;
+}
+
+.wrapped-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
