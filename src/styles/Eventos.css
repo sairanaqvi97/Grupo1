@@ -1,7 +1,16 @@
 .hello{
-    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    margin: auto;
+    font-family: "inter", sans-serif;
     font-size: large;
     padding-top: 1rem;
     color: aliceblue;
     margin-left: 1rem;
+    background-image: url(../assets/Images/friends.webp);
+    background-size: cover;
+    font-size: 2rem;
+    padding-top: 0px;
+    margin: auto;
 }

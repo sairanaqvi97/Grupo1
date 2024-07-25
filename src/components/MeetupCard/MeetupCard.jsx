@@ -22,7 +22,7 @@ function MeetupCard() {
     <div id="events" className="break-words quedadafull marginTOP">
       <h1 className="textXL">MeetNow</h1>
       <h2 className="tubo">¡Quedadas por un tubo!</h2>
-      <ul>
+      <ul className="display">
         {meetups.map((meetup) => {
           const keywords = Array.isArray(meetup.keywords)
             ? meetup.keywords
@@ -30,7 +30,7 @@ function MeetupCard() {
 
           return (
             <li key={meetup.id}>
-              <h3>{meetup.title}</h3>
+              <h3 className="h3-id">{meetup.title}</h3>
               <p>
                 <strong>Host:</strong> {meetup.host.name}
               </p>
