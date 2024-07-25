@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from '../hook/useForm';
+import { registerUser } from '../components/service/userService';
 
 export const Register = () => {
 	const navigate = useNavigate();
 
-	const { name, email, password, onInputChange, onResetForm } =
-		useForm({
-			name: '',
-			email: '',
-			password: '',
-		});
+	const [userInfo, setUserInfo] = useState({
+		name: '',
+		email: '',
+		password: '',
+	});
 
-	const onRegister = e => {
+	const [message, setMessage] = useState('');
+
+	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		navigate('/inicio', {
-			replace: true,
-			state: {
-				logged: true,
-				name,
-			},
-		});
-
-		onResetForm();
+		registerUser(userInfo)
+			.then((data) => {
+				console.log(data);
+				setMessage('Registration successful!');
+				setUserInfo({
+					name: "",
+					email: "",
+					password: "",
+				});
+				setTimeout(() => navigate('/login'), 2000);
+			})
+			.catch((error) => {
+				console.error('Registration error:', error);
+				setMessage('Registration failed. Please try again.');
+			});
 	};
 
 	return (
 		<div className='wrapper'>
-			<form onSubmit={onRegister}>
+			{message && <div className="message">{message}</div>}
+			<form onSubmit={handleSubmit}>
 				<h1></h1>
 
 				<div className='input-group'>
@@ -36,13 +43,12 @@ export const Register = () => {
 						type='text'
 						name='name'
 						id='name'
-						value={name}
-						onChange={onInputChange}
+						value={userInfo.name}
+						onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}
 						required
 						autoComplete='off'
 						className='input-transparent'
-                        placeholder='Enter your name'
-						
+						placeholder='Enter your name'
 					/>
 					<label htmlFor='name'>Name</label>
 				</div>
@@ -52,12 +58,12 @@ export const Register = () => {
 						type='email'
 						name='email'
 						id='email'
-						value={email}
-						onChange={onInputChange}
+						value={userInfo.email}
+						onChange={(e) => setUserInfo({...userInfo, email: e.target.value})}
 						required
 						autoComplete='off'
 						className='input-transparent'
-                        placeholder='Enter your email'
+						placeholder='Enter your email'
 					/>
 					<label htmlFor='email'>Email</label>
 				</div>
@@ -66,21 +72,20 @@ export const Register = () => {
 						type='password'
 						name='password'
 						id='password'
-						value={password}
-						onChange={onInputChange}
+						value={userInfo.password}
+						onChange={(e) => setUserInfo({...userInfo, password: e.target.value})}
 						required
 						autoComplete='off'
 						className='input-transparent'
-                        placeholder='Enter your password'
+						placeholder='Enter your password'
 					/>
 					<label htmlFor='password'>Password</label>
 				</div>
 
 				<button className='register-btn'>Register</button>
-				
 			</form>
 		</div>
 	);
-};
+}
 
 export default Register;

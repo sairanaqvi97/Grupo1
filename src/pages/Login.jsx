@@ -1,62 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from '../hook/useForm';
+import { getDataUser } from '../components/service/userService';
 
-export const Login = () => {
-  const navigate = useNavigate();
 
-  const { name, email, password, onInputChange, onResetForm } = useForm({
-    name: '',
+export const Login = ({setUserData}) => {
+  const [user, setUser] = useState({
     email: '',
-    password: '',
+    password: ''
   });
 
-  const onLogin = e => {
-    e.preventDefault();
+  const [errorMessage, setErrorMessage] = useState('');
 
-    
-    const isAuthenticated = true;      // Simulación de autenticación
-    const token = "fake-token";      // Simulación  token
+  const navigate = useNavigate();
 
-    if (isAuthenticated) {
-      localStorage.setItem('token', token);
+  const handleInput = (e) => {
+    setUser({ ...user, [e?.target?.id]: e?.target?.value });
+  }
 
-      navigate('/inicio', {
-        replace: true,
-        state: {
-          logged: true,
-          name,
-        },
-      });
-
-      onResetForm();
-    } else {
-      console.error('Authentication failed');
-    }
-  };
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    getDataUser(user).then((data) => {
+      if (data.token) {
+        localStorage.setItem("user", JSON.stringify(data.token));
+        setUserData(data.token);
+        navigate('/inicio');
+      } else {
+        setErrorMessage('Credenciales inválidas. Pruba de nuevo.');
+      }
+    }).catch(error => {
+      setErrorMessage('Ha ocurrido un error, intñentalo de nuevo.');
+    });
+  }; 
+  
 
   return (
 
-    <div className='container-meetnow'>
-      <div className='left-section'>
-        <p className='color-general'>
-        <span style={{ color: '#2196F3' }}>MeetNow</span> te ayuda a comunicarte y compartir con las personas que forman
-        <span className='color-image color-image2 color-text-span fontF color-image3 color-image4' style={{ color: '#FF5722' }}> parte de tu vida.<br></br></span>.
-
-        </p>
-      </div>
-    
-    
     <div className='wrapper'>
-      <form onSubmit={onLogin}>
+      {errorMessage && (
+        <div className="error-popup">
+          {errorMessage}
+          <button onClick={() => setErrorMessage('')}>Close</button>
+        </div>
+      )}
 
+      <form onSubmit={handleSubmit}>
         <div className='input-group'>
           <input
             type='email'
             name='email'
             id='email'
-            value={email}
-            onChange={onInputChange}
+            value={user.email}
+            onChange={handleInput}
             required
             autoComplete='off'
             className='input-transparent'
@@ -69,8 +63,8 @@ export const Login = () => {
             type='password'
             name='password'
             id='password'
-            value={password}
-            onChange={onInputChange}
+            value={user.password}
+            onChange={handleInput}
             required
             autoComplete='off'
             className='input-transparent'
@@ -78,29 +72,9 @@ export const Login = () => {
           />
           <label htmlFor='password'>Password</label>
         </div>
-
-        <button className='login-btn'>Get In</button>
-        <p className='p-password'>Have you forgotten the password?</p>
-
-        <div className="sc-gDyJDg lcjrCd" style={{ opacity: 1 }}>
-          <a className="sc-bwcZwS button-apple" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-apple"></i>
-            &nbsp; {/* &nbsp ESPACIO entre icono y texto */}
-            App Store
-          </a>
-          <a className="sc-bwcZwS button-playstore" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-google-play"></i>
-            &nbsp;
-            Play Store
-          </a>
-        </div>
-        <p className='p-text'>Download the app.</p>
+        <button className='login-btn' type="submit">Get In</button>
       </form>
     </div>
-    </div>
-
-
-    
   );
 };
 
