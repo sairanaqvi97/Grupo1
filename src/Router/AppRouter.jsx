@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "../pages/Navbar";
+import { MeetupProvider } from "../components/context/meetupContext";
 import {
   Crear,
   Eventos,
@@ -17,7 +18,7 @@ export const AppRouter = ({userData, setUserData, authData}) => {
 
   return (
     <>
-      <meetupContext.Provider value={meetupContextValue}>
+      <MeetupProvider value={meetupContextValue}>
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route path="login" element={<Login setUserData={setUserData}/>} />
@@ -30,7 +31,7 @@ export const AppRouter = ({userData, setUserData, authData}) => {
             <Route path="/meetup/:id" element={<PrivateRoute authData={authData}><MeetupDetails /></PrivateRoute>} />
           </Route>
         </Routes>
-      </meetupContext.Provider>
+      </MeetupProvider>
     </>
   );
 };
