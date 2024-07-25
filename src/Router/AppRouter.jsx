@@ -10,7 +10,6 @@ import {
 } from "../pages";
 import { PrivateRoute } from "./PrivateRoute";
 import { useMeetupContext, meetupContext} from "../components/context/meetupContext";
-import { useContext } from "react";
 import Header from "../components/Header/Header";
 
 export const AppRouter = () => {

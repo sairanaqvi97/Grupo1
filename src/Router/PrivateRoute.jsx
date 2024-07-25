@@ -1,4 +1,5 @@
-import React from 'react';
+import PropTypes from 'prop-types'; // Importa PropTypes
+
 import { Navigate, useLocation } from 'react-router-dom';
 
 const isAuthenticated = () => {
@@ -17,3 +18,9 @@ export const PrivateRoute = ({ children }) => {
     <Navigate to="/login" state={{ from: location }} />
   );
 };
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired, // children debe ser un nodo React
+};
+
+export default PrivateRoute;
