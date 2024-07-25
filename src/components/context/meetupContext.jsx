@@ -21,4 +21,9 @@ export const useMeetupContext = () => {
   }, []);
 
   return {meetups, setMeetups, loading, setLoading, error, setError};
+
+
+
+
 };
+

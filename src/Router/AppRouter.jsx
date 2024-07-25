@@ -8,6 +8,7 @@ import {
   Perfil,
   Register,
 } from "../pages";
+import MeetupDetails from "../components/MeetupDetails/MeetupDetails";
 import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
 import { useMeetupContext, meetupContext} from "../components/context/meetupContext";
 
@@ -26,6 +27,7 @@ export const AppRouter = ({userData, setUserData, authData}) => {
             <Route path="/crear" element={<PrivateRoute authData={authData}><Crear /></PrivateRoute>} />
             <Route path="/eventos" element={<PrivateRoute authData={authData}><Eventos /></PrivateRoute>} />
             <Route path="/perfil" element={<PrivateRoute authData={authData}><Perfil /></PrivateRoute>} />
+            <Route path="/meetup/:id" element={<PrivateRoute authData={authData}><MeetupDetails /></PrivateRoute>} />
           </Route>
         </Routes>
       </meetupContext.Provider>
