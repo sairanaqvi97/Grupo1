@@ -13,11 +13,11 @@ export const Perfil = () => {
       .catch((error) => console.error("Error al recibir la información", error));
   }, []);
 
-  const meetupsUser = user
-    ? userMeetups.filter(meetup =>
-        meetup.Attendees.some(attendee => attendee.id === user.id)
-      )
-    : [];
+  const meetupsUser = user && userMeetups
+  ? userMeetups.filter(meetup =>
+      meetup.Attendees && meetup.Attendees.some(attendee => attendee.id === user.id)
+    )
+  : [];
 
   const activeMeetups = meetupsUser.filter(meetup => meetup.activeMeetup);
   const pastMeetups = meetupsUser.filter(meetup => !meetup.activeMeetup);
@@ -25,7 +25,7 @@ export const Perfil = () => {
   return (
     <>
       <Header />
-      
+
       <div className="profile-container">
         <h2>Perfil de Usuario</h2>
         <div>

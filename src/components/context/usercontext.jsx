@@ -1,10 +1,31 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+
 
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const contextValue = useUserContext();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const savedUser = JSON.parse(localStorage.getItem('user'));
+    if (savedUser) {
+      setUser(savedUser);
+    }
+  }, []);
+
+  const login = (userData) => {
+    localStorage.setItem('user', JSON.stringify(userData));
+    setUser(userData);
+  };
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+  };
+
+  const contextValue = { user, setUser, login, logout };
+
   return (
     <UserContext.Provider value={contextValue}>
       {children}
@@ -12,20 +33,8 @@ export const UserProvider = ({ children }) => {
   );
 };
 
-export const useUserContext = () => {
-  const [user, setUser] = useState(null);
+export const useUserContext = () => useContext(UserContext);
 
-  const updateUserData = async (updatedData) => {
-    try {
-      const response = await updateUser(updatedData);
-      setUser(response);
-    } catch (error) {
-      console.error("Error updating user data:", error);
-    }
-  };
-
-  return { user, setUser, updateUserData };
-};
 
 
 

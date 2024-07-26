@@ -2,17 +2,18 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { meetupContext } from "../context/meetupContext";
 import Header from "../Header/Header";
-import { updateMeetup } from "../service/MeetupService";
+
+
 
 function MeetupDetails() {
   const { id } = useParams();
-  const { updateMeetup } = useContext(meetupContext);
+  const { updateMeetup, meetups, getMeetupById } = useContext(meetupContext);
   const [meetup, setMeetup] = useState(null);
 
   useEffect(() => {
     const selectedMeetup = meetups.find((m) => m.id === id);
     setMeetup(selectedMeetup);
-  }, [id, meetups]);
+  }, [id, getMeetupById]);
 
   if (!meetup) {
     return <div>Loading...</div>;

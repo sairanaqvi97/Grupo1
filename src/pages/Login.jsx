@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getDataUser } from '../components/service/userService';
-
+import { UserContext } from '../components/context/usercontext';
 
 export const Login = ({setUserData}) => {
   const [user, setUser] = useState({
@@ -41,7 +41,6 @@ export const Login = ({setUserData}) => {
   };
 
   
-
   return (
 
     <div className='wrapper'>
