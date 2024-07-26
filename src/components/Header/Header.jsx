@@ -3,6 +3,7 @@ import { useState } from "react"
 import Menu from "../Menu/Menu"
 import BurgerButton from "../BurgerButton/BurgerButton"
 import logoImage from '../../assets/Footer/MeetNowLogoYellow.svg';
+import '../../styles/Header';
 
 function Header() {
   const [clicked, setClicked] = useState(false);

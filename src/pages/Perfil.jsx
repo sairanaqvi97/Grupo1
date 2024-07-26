@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
 import { getMeetups } from "../components/service/MeetupService";
-import '../styles/Perfil.css'
+import '../Styles/Perfil.css'
 
 export const Perfil = () => {
 
