@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import styles from '../styles/Menu.module.css';
+import Styles from '../styles/Menu.module.css';
 
 const Menu = () => {
     return (
         <nav>
-            <ul className={styles.menu}>
+            <ul className={Styles.menu}>
                 <li>
                     <Link href="/">Inicio</Link>
                 </li>

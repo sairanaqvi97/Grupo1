@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getDataUser } from '../components/service/userService';
-import '../Styles/Login.css';
+import '../styles/Login.css';
 
 
 export const Login = ({setUserData}) => {

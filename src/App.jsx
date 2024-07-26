@@ -1,5 +1,5 @@
 import {AppRouter} from "./Router/AppRouter";
-import './styles/Login.css';
+import './Styles/Login.css';
 import { useState, useEffect } from "react";
 import { getDataUserForAuth } from "./components/service/userService"; 
 
