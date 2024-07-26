@@ -1,8 +1,17 @@
 
 import '../../styles/Footer.css';
 import MeetNow from '../../assets/Footer/MeetNowLogoWhite.svg';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const location = useLocation();
+    const hiddenFooterRoutes = ['/login', '/register','/inicio' ];
+
+    if (hiddenFooterRoutes.includes(location.pathname)) {
+        return null;
+      }
+
+
     return (
         <footer>
         <div className="footer__container">
