@@ -6,7 +6,7 @@ import { updateMeetup } from "../service/MeetupService";
 
 function MeetupDetails() {
   const { id } = useParams();
-  const { meetups } = useContext(meetupContext);
+  const { updateMeetup } = useContext(meetupContext);
   const [meetup, setMeetup] = useState(null);
 
   useEffect(() => {

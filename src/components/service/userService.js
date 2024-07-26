@@ -35,3 +35,5 @@ export const registerUser = (user) => {
   }).then((res) => res.json());
 };
 
+//funcion para camiar credenciales del usuario
+

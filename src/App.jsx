@@ -2,10 +2,10 @@ import {AppRouter} from "./Router/AppRouter";
 import './styles/Login.css';
 import { useState, useEffect } from "react";
 import { getDataUserForAuth } from "./components/service/userService"; 
+import Navbar from "./pages/Navbar";
 
 function App() {
-  const dataLocal = JSON.parse(localStorage.getItem("user"));
-  const [userData, setUserData] = useState(dataLocal); 
+  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("user")));
   const [authData, setAuthData] = useState(null);
 
   useEffect(() => {
@@ -17,8 +17,10 @@ function App() {
     }
   }, [userData]);
 
-  return <AppRouter userData={userData} setUserData={setUserData} authData={authData} />;
+  return ( <>
+  <Navbar userData={authData} setUserData={setUserData}/> 
+  <AppRouter userData={userData} setUserData={setUserData} authData={authData} setAuthData={setAuthData} />
+  </>);
 }
 
-export default App;
-  
+export default App
