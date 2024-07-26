@@ -49,11 +49,25 @@ export const Perfil = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="age">Edad:</label>
-            <input type="number" id="age" name="age" required></input>
+            <label htmlFor="lastName">Nick de usuario:</label>
+            <input type="text" id="lastName" name="nickName" required></input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">País de origen:</label>
+            <input type="text" id="lastName" name="nickName" required></input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">Ciudad de residencia:</label>
+            <input type="text" id="lastName" name="nickName" required></input>
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">Nick de usuario:</label>
+            <input type="text" id="lastName" name="nickName" required></input>
           </div>
 
-          <div className="form-group">
+          
+
+          <div className="form-group gender-box">
             <label htmlFor="gender">Sexo:</label>
             <select id="gender" name="gender" required>
               <option value="male">Masculino</option>
@@ -70,7 +84,15 @@ export const Perfil = () => {
           <button type="submit">Guardar Cambios</button>
         </form>
 
-        <section className="form">
+
+
+
+
+
+
+
+
+        {/* <section className="form">
           <h2>Información del Usuario</h2>
           <div className="form-group">
             <label htmlFor="firstName">Nombre:</label>
@@ -96,10 +118,37 @@ export const Perfil = () => {
             <label htmlFor="birthdate">Fecha de Nacimiento:</label>
             <p id="birthdate">{user.birthdate}</p>
           </div>
-        </section>
-      </div>
+        </section> */}
 
-      <section>
+        <div className="mis-quedadas-activas">
+            <form>
+                <div className="form-group">
+                    <label htmlFor="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="ubicacion">Ubicación:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+  
+    
+
+      <section className="mis-quedadas-activas">
         <h2>Mis quedadas activas</h2>
         <ul>
           {activeMeetups.map((meetup) => (
@@ -107,6 +156,7 @@ export const Perfil = () => {
           ))}
         </ul>
       </section>
+      </div>
     </div>
   );
 };
