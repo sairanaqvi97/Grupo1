@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { getDataUserForAuth } from "./components/service/userService";
 
 function App() {
-  const dataLocal = JSON.parse(localStorage.getItem("user"));
-  const [userData, setUserData] = useState(dataLocal);
+  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("user")));
   const [authData, setAuthData] = useState(null);
 
   useEffect(() => {

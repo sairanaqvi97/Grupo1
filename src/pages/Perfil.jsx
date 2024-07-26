@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
 import { getMeetups } from "../components/service/MeetupService";
 import "../styles/Perfil.css";
+import { useUserContext } from "../components/context/usercontext";
 
 const user = {
   firstName: "Tony",
@@ -10,20 +11,28 @@ const user = {
   gender: "Masculino",
 };
 
+
 export const Perfil = () => {
   const [userMeetups, setUserMeetups] = useState([]);
+  const { user } = useUserContext();
 
   useEffect(() => {
     getMeetups()
       .then((data) => setUserMeetups(data))
-      .catch((error) => console.error("Error al recibir la informacion"));
+      .catch((error) => console.error("Error al recibir la información", error));
   }, []);
 
-  const activeMeetups = userMeetups.filter((meetup) => meetup.activeMeetup);
-  const pastMeetups = userMeetups.filter((meetup) => !meetup.activeMeetup);
+  const meetupsUser = user && userMeetups
+    ? userMeetups.filter(meetup =>
+        meetup.Attendees && meetup.Attendees.some(attendee => attendee.id === user.id)
+      )
+    : [];
+
+  const activeMeetups = meetupsUser.filter(meetup => meetup.activeMeetup);
+  const pastMeetups = meetupsUser.filter(meetup => !meetup.activeMeetup);
 
   return (
-    <div>
+    <>
       <Header />
 
       <div className="container">
@@ -49,23 +58,17 @@ export const Perfil = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="lastName">Nick de usuario:</label>
-            <input type="text" id="lastName" name="nickName" required></input>
+            <label htmlFor="nickName">Nick de usuario:</label>
+            <input type="text" id="nickName" name="nickName" required></input>
           </div>
           <div className="form-group">
-            <label htmlFor="lastName">País de origen:</label>
-            <input type="text" id="lastName" name="nickName" required></input>
+            <label htmlFor="country">País de origen:</label>
+            <input type="text" id="country" name="country" required></input>
           </div>
           <div className="form-group">
-            <label htmlFor="lastName">Ciudad de residencia:</label>
-            <input type="text" id="lastName" name="nickName" required></input>
+            <label htmlFor="city">Ciudad de residencia:</label>
+            <input type="text" id="city" name="city" required></input>
           </div>
-          <div className="form-group">
-            <label htmlFor="lastName">Nick de usuario:</label>
-            <input type="text" id="lastName" name="nickName" required></input>
-          </div>
-
-          
 
           <div className="form-group gender-box">
             <label htmlFor="gender">Sexo:</label>
@@ -83,42 +86,6 @@ export const Perfil = () => {
 
           <button type="submit">Guardar Cambios</button>
         </form>
-
-
-
-
-
-
-
-
-
-        {/* <section className="form">
-          <h2>Información del Usuario</h2>
-          <div className="form-group">
-            <label htmlFor="firstName">Nombre:</label>
-            <p id="firstName">{user.firstName}</p>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="lastName">Apellidos:</label>
-            <p id="lastName">{user.lastName}</p>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="age">Edad:</label>
-            <p id="age">{user.age}</p>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="gender">Sexo:</label>
-            <p id="gender">{user.gender}</p>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="birthdate">Fecha de Nacimiento:</label>
-            <p id="birthdate">{user.birthdate}</p>
-          </div>
-        </section> */}
 
         <div className="mis-quedadas-activas">
             <form>
@@ -145,19 +112,52 @@ export const Perfil = () => {
                 <button type="submit">Enviar</button>
             </form>
         </div>
-  
-    
 
-      <section className="mis-quedadas-activas">
-        <h2>Mis quedadas activas</h2>
-        <ul>
-          {activeMeetups.map((meetup) => (
-            <li key={meetup.id}>{meetup.title}</li>
-          ))}
-        </ul>
-      </section>
+        <section className="mis-quedadas-activas">
+          <h2>Mis quedadas activas</h2>
+          <ul>
+            {activeMeetups.map((meetup) => (
+              <li key={meetup.id}>{meetup.title}</li>
+            ))}
+          </ul>
+        </section>
+
+        <div className="profile-container">
+          <h2>Perfil de Usuario</h2>
+          <div>
+            <p>
+              <strong>Nombre:</strong> {user?.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {user?.email}
+            </p>
+          </div>
+        </div>
+        <div className="meetups-container">
+          <h3>Tus Quedadas Activas</h3>
+          <ul>
+            {activeMeetups.length > 0 ? (
+              activeMeetups.map(meetup => (
+                <li key={meetup.id}>{meetup.title}</li>
+              ))
+            ) : (
+              <p>No tienes quedadas activas.</p>
+            )}
+          </ul>
+          <h3>Tus Quedadas Pasadas</h3>
+          <ul>
+            {pastMeetups.length > 0 ? (
+              pastMeetups.map(meetup => (
+                <li key={meetup.id}>{meetup.title}</li>
+              ))
+            ) : (
+              <p>No tienes quedadas pasadas.</p>
+            )}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
+
 export default Perfil;

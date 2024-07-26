@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getDataUser } from '../components/service/userService';
-
+import { UserContext } from '../components/context/usercontext';
 
 export const Login = ({setUserData}) => {
   const [user, setUser] = useState({
@@ -19,20 +19,28 @@ export const Login = ({setUserData}) => {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    getDataUser(user).then((data) => {
-      if (data.token) {
-        localStorage.setItem("user", JSON.stringify(data.token));
-        setUserData(data.token);
-        navigate('/inicio');
-      } else {
-        setErrorMessage('Credenciales inválidas. Pruba de nuevo.');
-      }
-    }).catch(error => {
-      setErrorMessage('Ha ocurrido un error, intñentalo de nuevo.');
-    });
-  }; 
-  
+    getDataUser(user)
+      .then((data) => {
+        console.log('Response data:', data);  // Debugging line
+        if (data.token) {
+          localStorage.setItem("user", JSON.stringify(data.token));
+          setUserData(data.token);
+          // Ensure setAuthData is defined or imported
+          if (typeof setAuthData === 'function') {
+            setAuthData(data.token);
+          }
+          navigate('/inicio');
+        } else {
+          setErrorMessage('Credenciales inválidas. Prueba de nuevo.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);  // Debugging line
+        setErrorMessage('Ha ocurrido un error, inténtalo de nuevo.');
+      });
+  };
 
+  
   return (
 
     <div className='wrapper'>

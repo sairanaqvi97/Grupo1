@@ -1,0 +1,82 @@
+.meetup-details {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #7C1E96;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.meetup-details h1 {
+  font-size: 3rem;
+  color: #7C1E96;
+  margin-bottom: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.host-info, .meetup-info, .attendees, .sign-up-section {
+  margin-bottom: 40px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.host-info h2, .attendees h2, .sign-up-section h2 {
+  font-size: 2rem;
+  color: #7C1E96;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.meetup-info p, .host-info p, .attendees p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.sign-up-section button {
+  background-color: #FFE98F;
+  color: #7C1E96;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-section button:hover:not(:disabled) {
+  background-color: #7C1E96;
+  color: #FFE98F;
+  transform: translateY(-2px);
+}
+
+.attendees ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.attendees li {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 932px) {
+  .meetup-details h1 {
+    font-size: 2.5rem;
+  }
+  
+  .host-info h2, .attendees h2, .sign-up-section h2 {
+    font-size: 1.8rem;
+  }
+}
