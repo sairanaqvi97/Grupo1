@@ -1,39 +1,21 @@
-components/Card/Card.css
-.card-meet{
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: box-shadow 0.3s ease-in-out;
-}
 
-/* Estilo general del contenedor de tarjetas */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center; 
-    justify-content: space-between;
-    margin-top: 5px;
-    max-width: 100%; 
-  
-    }
+
 .card {
     margin-top: 20px;
     margin-left: 50px;
     margin-right: 50px;
-    width: 100%;
+    width: 40%;
     height: 50;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background-color: #fff;
     transition: transform 0.2s ease-in-out;
     color:#FFE98F;
     background-color:#7C1E96;
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 1.0rem; 
 }
+
 .card:hover {
     transform: scale(1.05);
 }
@@ -66,15 +48,6 @@ components/Card/Card.css
 
 }
 
-.card-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-margin-top: 5px
-}
-
-
 .image-wrapper {
     display: flex;
     justify-content: center;
@@ -93,4 +66,34 @@ margin-top: 5px
     height: auto;
     border-radius: 5px;
     object-fit: cover;
+}
+
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+    gap: 16px; /* Espacio entre las tarjetas */
+    margin-top: 5px;
+}
+
+.card-container .card {
+    flex: 1 1 calc(33.333% - 16px); /* Tres tarjetas por fila con espacio entre ellas */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: purple;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .card-container .card {
+        flex: 1 1 calc(50% - 16px); /* Dos tarjetas por fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container .card {
+        flex: 1 1 100%; /* Una tarjeta por fila en pantallas muy pequeñas */
+    }
 }
