@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './styles/Login.css';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 

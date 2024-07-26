@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { meetupContext } from "../context/meetupContext";
 import "../../styles/MeetCard.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
 function MeetupCard() {
   const { meetups, loading, error } = useContext(meetupContext);
@@ -43,14 +44,15 @@ function MeetupCard() {
                 />
               </div>
               <p>
-                <strong>Location:</strong> {meetup.googleMapsLink}
+                <strong>Location:</strong> 
+                {meetup.googleMapsLink}
               </p>
               <p>
                 <a
                   href={meetup.googleMapsLink}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
+                    <i className="fas fa-map-marker-alt"></i>
                   View on Google Maps
                 </a>
               </p>

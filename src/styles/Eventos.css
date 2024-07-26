@@ -31,3 +31,15 @@
         color:#FFE98F;
     }
 }
+
+.MeetupCard__link--items a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.MeetupCard__link--items i {
+    margin-right: 8px;
+    color: #4285F4; /* Color azul de Google Maps */
+}
