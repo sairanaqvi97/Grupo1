@@ -20,8 +20,8 @@ export const getMeetups = () => {
     };
 // funcion para hacer POST 
 
-export const createMeetup = (meetupData) => {
-  return fetch('https://669936f52069c438cd71a5fd.mockapi.io/MeetUps/quedada', {
+export const createMeetup = async (meetupData) => {
+  return await fetch('https://669936f52069c438cd71a5fd.mockapi.io/MeetUps/quedada', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
