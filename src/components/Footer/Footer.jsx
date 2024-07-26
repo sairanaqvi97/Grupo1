@@ -3,6 +3,7 @@ import '../../styles/Footer.css';
 import MeetNow from '../../assets/Footer/MeetNowLogoWhite.svg';
 
 const Footer = () => {
+    
     return (
         <footer>
         <div className="footer__container">
