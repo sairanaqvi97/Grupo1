@@ -1,11 +1,11 @@
-import {AppRouter} from "./Router/AppRouter";
-import './styles/Login.css';
+import { AppRouter } from "./Router/AppRouter";
+import "./styles/Login.css";
 import { useState, useEffect } from "react";
-import { getDataUserForAuth } from "./components/service/userService"; 
+import { getDataUserForAuth } from "./components/service/userService";
 
 function App() {
   const dataLocal = JSON.parse(localStorage.getItem("user"));
-  const [userData, setUserData] = useState(dataLocal); 
+  const [userData, setUserData] = useState(dataLocal);
   const [authData, setAuthData] = useState(null);
 
   useEffect(() => {
@@ -17,8 +17,13 @@ function App() {
     }
   }, [userData]);
 
-  return <AppRouter userData={userData} setUserData={setUserData} authData={authData} />;
+  return (
+    <AppRouter
+      userData={userData}
+      setUserData={setUserData}
+      authData={authData}
+    />
+  );
 }
 
 export default App;
-  

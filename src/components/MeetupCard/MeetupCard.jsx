@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { meetupContext } from "../context/meetupContext";
-import "../../styles/MeetupCard.css";
+import "../../styles/MeetCard.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
 function MeetupCard() {
   const { meetups, loading, error } = useContext(meetupContext);
@@ -19,39 +20,39 @@ function MeetupCard() {
   }
 
   return (
-    <div id="events" className="break-words quedadafull marginTOP">
-      <h1 className="textXL">MeetNow</h1>
-      <h2 className="tubo">¡Quedadas por un tubo!</h2>
-      <ul>
-        {meetups.map((meetup) => {
-          const keywords = Array.isArray(meetup.keywords)
-            ? meetup.keywords
-            : [];
+    <div id="events" className="card-container">
+      {meetups.map((meetup) => {
+        const keywords = Array.isArray(meetup.keywords) ? meetup.keywords : [];
 
-          return (
-            <li key={meetup.id}>
-              <h3>{meetup.title}</h3>
+        return (
+          <div key={meetup.id} className="card">
+            <h1 className="card-title">{meetup.title}</h1>
+            <div className="card-paragraph">
               <p>
                 <strong>Host:</strong> {meetup.host.name}
               </p>
               <p>
                 <strong>Contact:</strong> {meetup.host.contact}
               </p>
-              <img
-                src={meetup.host.avatar}
-                alt={`${meetup.host.name}'s avatar`}
-                width="50"
-                height="50"
-              />
+              <div className="image-wrapper">
+                <img
+                  className="wrapped-image"
+                  src={meetup.host.avatar}
+                  alt={`${meetup.host.name}'s avatar`}
+                  width="50"
+                  height="50"
+                />
+              </div>
               <p>
-                <strong>Location:</strong> {meetup.googleMapsLink}
+                <strong>Location:</strong> 
+                {meetup.googleMapsLink}
               </p>
               <p>
                 <a
                   href={meetup.googleMapsLink}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
+                    <i className="fas fa-map-marker-alt"></i>
                   View on Google Maps
                 </a>
               </p>
@@ -70,10 +71,10 @@ function MeetupCard() {
               <p>
                 <strong>Active:</strong> {meetup.activeMeetup ? "Yes" : "No"}
               </p>
-            </li>
-          );
-        })}
-      </ul>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
